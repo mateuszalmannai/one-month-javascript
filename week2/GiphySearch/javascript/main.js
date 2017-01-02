@@ -7,6 +7,8 @@ document.querySelector(".js-go").addEventListener('click', function(){
 });
 
 document.querySelector(".js-userinput").addEventListener('keyup', function(e){
+
+  // check for 'Enter'
   if (e.which === 13) {
     var input = document.querySelector("input").value;
     console.log(input);
