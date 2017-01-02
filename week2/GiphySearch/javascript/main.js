@@ -39,15 +39,21 @@ GiphyAJAXCall.addEventListener('load', function( e ) {
 function pushToDOM(input){
   // Deal with API Data, i.e. convert to a JavaScript object
   var response = JSON.parse(input);
-  var imageUrl = response.data[1].images.fixed_height.url;
-  console.log(imageUrl);
+  // var imageUrl = response.data[1].images.fixed_height.url;
+  var imageUrls = response.data;
+
 
   // The following grabs every class on the page, i.e. you grab classes multiple times in contrast to ids
   // Because there can be multiple results, we get an object/array back instead of a single element 
   var container = document.getElementsByClassName("js-container");
-  // I would alternate with single quotes instead of escaping here
-  container[0].innerHTML = "<img src=\"" + imageUrl + "\" />";
-  // container[0].innerHTML = imageUrl;
+  imageUrls.forEach(function(image){
+    var src = image.images.fixed_height.url;
+    console.log(src);
+    // I would alternate with single quotes instead of escaping here
+    // Make sure to add to what's already on the page
+    container[0].innerHTML += "<img src=\"" + src + "\" class=\"container-image\" />";
+    // container[0].innerHTML = imageUrl;
+  });
 
 
 }
