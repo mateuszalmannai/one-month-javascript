@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="Happy Hour App - How about a drink!?">
+	<meta name="keywords" content="happy hour, drink, beers">
+	<title>Happy Hour</title>
+	<!-- external CSS link -->
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script>
+	// Our List of Bars
+	var bars = [
+		'Siggys',
+		'Blind Tiger',
+		'Zum Schneider',
+		'One Month',
+		'Home Sweet Home',
+		'Union Pool'
+	];
+
+	// Our List of corresponding embeddable maps
+
+	var maps = [
+		'<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.6938935294133!2d-73.99531278434792!3d40.72475464477173!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259850cbcc303%3A0x306bb91aab0eba0d!2sSiggy&#39;s+Good+Food!5e0!3m2!1sen!2sde!4v1482928590587" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>',
+		'<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.3707261973327!2d-74.00542538434776!3d40.73186734433638!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25993a10b6e59%3A0x974ded5ed3f5e014!2sBlind+Tiger!5e0!3m2!1sen!2sde!4v1482928899016" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>',
+		'<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.716454936424!2d-73.98110568434801!3d40.72425804480193!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25979dcad5647%3A0xeb77bc74cd054f06!2sZum+Schneider+NYC!5e0!3m2!1sen!2sde!4v1482928938663" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>',
+		'<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.604240812773!2d-73.99520688434797!3d40.72672794465084!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2598536dbb685%3A0x660357c8d55fa581!2s37+Great+Jones+St%2C+New+York%2C+NY+10012%2C+USA!5e0!3m2!1sen!2sde!4v1482929758721" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>',
+		'<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.932044391528!2d-73.99570468434803!3d40.719512445092406!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25987ca93a26f%3A0xa8bcefbb25e0645f!2sHome+Sweet+Home!5e0!3m2!1sen!2sde!4v1482929798390" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>',
+		'<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.138310497508!2d-73.95370148434822!3d40.71497164537016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259596cfc174d%3A0x86b6b9e123c6dd36!2sUnion+Pool!5e0!3m2!1sen!2sde!4v1482929838840" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>'
+	]
+
+	// Our List of Friends
+	var friends = [
+		'Mattan',
+		'Chris',
+		'Lee',
+		'Casey',
+		'that girl you forgot to text back',
+		'Kayne West'
+	];
+
+	var randomNumber = Math.floor(Math.random() * bars.length);
+	var randomNumber02 = Math.floor(Math.random() * bars.length);
+
+	var barname = bars[randomNumber];
+	var map = maps[randomNumber];
+	// I don't want to always take the same person to the same place
+	var friendname = friends[randomNumber02];
+
+	document.write("<div> RandomNo1: " + randomNumber + ", RandomNo2: " + randomNumber02 +"</div>");
+	document.write("How about you go to <strong>" + barname + "</strong> with <strong>" + friendname + "</strong>?");
+	document.write('<div>' + map + '</div>');
+	</script>
+</head>
+
+<body>
+	<!-- PAGE CONTENT WILL BE PRINTED HERE -->
+</body>
+
+</html>

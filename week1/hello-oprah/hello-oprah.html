@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Oprah Likes You. And so do other people.</title>
+  <style>
+  /* Basic CSS comment */
+  
+  body {
+    background: #BBB;
+    color: white;
+    width: 960px;
+    margin: 0 auto;
+  }
+  
+  h1 {
+    font-size: 80px;
+    color: #333;
+  }
+  </style>
+  <script>
+  /* this is an event */
+  // alert("I'm annoying!");
+  
+  var username = prompt("What is your name?");
+  var car = new Array("BMW", "Saab", "Maserati");
+  var randomNumber = Math.floor((Math.random() * 3));
+
+  /* I decided not to go with an else-if as that would mean repetition in terms of the code that's run when 
+   either of the conditions are met. The following is more succinct and has the same desired effect.
+   It would probably be best to put the lucky winners in an array and then check whether username matches 
+   any of them  */
+  if (username === "Chris" || username === "Mat") {
+    document.write("<h1>Hello " + username + " you won a " + car[randomNumber] + "!</h1>");
+    document.write("<img src='" + car[randomNumber] + ".jpg' alt='" + car[randomNumber] + "'>");
+  } else {
+    document.write("<h1>Hello " + username + "!</h1>");
+  }
+  </script>
+</head>
+
+<body>
+  <div>
+    <img src="oprah.jpeg" alt="Oprah">
+  </div>
+</body>
+
+</html>

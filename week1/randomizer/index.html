@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Randomizer</title>
+	<!-- external CSS link -->
+	<link rel="stylesheet" href="css/style.css">
+	<script>
+
+	var articles = [ "The", "A", "One", "Some", "Any"];
+	var nouns = [ " rabid dog", " extreme token", " trecherous cretin", " mad cow", " charismatic young man", " slimy slug"];
+	var verbs = [ " sucked their way", " jumped up and down", " slid", " walked", " squirmed", " crawled"];
+	var prepositions = [" to", " from", " over", " under", " unto"];
+	var endings = [" the seashore.", " the barber's shop.", " the depths of hell.", " their destiny."];
+
+	var randomArticle = randomize(articles);
+	var randomNoun = randomize(nouns);
+	var randomVerb = randomize(verbs);
+	var randomPreposition = randomize(prepositions);
+	var randomEnding = randomize(endings);
+
+	function randomize(array){
+		return array[Math.floor(Math.random() * array.length)];
+	};
+
+	document.write("<div>" + randomArticle + randomNoun + randomVerb + randomPreposition + randomEnding +"</div>");
+	document.write("<div><img src='http://unsplash.it/500/500?random' alt='Random Image'></div>");
+	
+	</script>
+</head>
+
+<body>
+
+	<!-- PAGE CONTENT WILL BE PRINTED HERE -->
+</body>
+<script>
+	var colors = ['#4286f4', '#e842f4', '#42eef4', '#42f477', '#e5f442', '#f44248'];
+	var randomNumber = Math.floor(Math.random() * colors.length);
+
+	document.body.style.background = colors[randomNumber];
+
+</script>
+</html>
