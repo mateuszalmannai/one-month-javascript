@@ -17,7 +17,6 @@ document.querySelector(".js-userinput").addEventListener('keyup', function(e){
 
 // 2. Do the data stuff with the API
 function makeRequest(searchTerm){
-  // var url = "http://api.giphy.com/v1/gifs/search?q=funny+cat&api_key=dc6zaTOxFJmzC";
   var url = "http://api.giphy.com/v1/gifs/search?q=" + searchTerm + "&api_key=dc6zaTOxFJmzC";
 
   // AJAX Request
@@ -35,12 +34,11 @@ function makeRequest(searchTerm){
 
 
 
-// 3. Show me the moneys!
+// 3. Show me yer gubbins!
 
 function pushToDOM(input){
   // Deal with API Data, i.e. convert to a JavaScript object
   var response = JSON.parse(input);
-  // var imageUrl = response.data[1].images.fixed_height.url;
   var imageUrls = response.data;
 
 
@@ -56,7 +54,6 @@ function pushToDOM(input){
     // I would alternate with single quotes instead of escaping here
     // Make sure to add to what's already on the page
     container[0].innerHTML += "<img src=\"" + src + "\" class=\"container-image\" />";
-    // container[0].innerHTML = imageUrl;
   });
 
 
