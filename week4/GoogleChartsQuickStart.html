@@ -1,0 +1,118 @@
+<html>
+
+<head>
+  <!--Load the AJAX API-->
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+  // Load the Visualization API and the corechart package.
+  google.charts.load('current', {
+    'packages': ['corechart', 'gauge', 'geochart']
+  });
+
+  // Set a callback to run when the Google Visualization API is loaded.
+  google.charts.setOnLoadCallback(drawPieChart);
+
+  // Callback that creates and populates a data table,
+  // instantiates the pie chart, passes in the data and
+  // draws it.
+  function drawPieChart() {
+
+    // Create the data table.
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'Topping');
+    data.addColumn('number', 'Slices');
+    data.addRows([
+      ['Mushrooms', 3],
+      ['Onions', 1],
+      ['Olives', 1],
+      ['Zucchini', 1],
+      ['Pepperoni', 2]
+    ]);
+
+    // Set chart options
+    var options = {
+      'title': 'How Much Pizza I Ate Last Night',
+      'width': 600,
+      'height': 500,
+      'is3D': true
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var pieChart = new google.visualization.PieChart(document.getElementById('pie_chart_div'));
+    pieChart.draw(data, options);
+  }
+
+  google.charts.setOnLoadCallback(drawGaugeChart);
+
+  function drawGaugeChart() {
+
+    var data = google.visualization.arrayToDataTable([
+      ['Label', 'Value'],
+      ['Memory', 80],
+      ['CPU', 55],
+      ['Network', 68]
+    ]);
+
+    var options = {
+      width: 400,
+      height: 120,
+      redFrom: 90,
+      redTo: 100,
+      yellowFrom: 75,
+      yellowTo: 90,
+      minorTicks: 5
+    };
+
+    var gaugeChart = new google.visualization.Gauge(document.getElementById('gauge_chart_div'));
+    gaugeChart.draw(data, options);
+
+    setInterval(function() {
+      data.setValue(0, 1, 40 + Math.round(60 * Math.random()));
+      chart.draw(data, options);
+    }, 13000);
+    setInterval(function() {
+      data.setValue(1, 1, 40 + Math.round(60 * Math.random()));
+      chart.draw(data, options);
+    }, 5000);
+    setInterval(function() {
+      data.setValue(2, 1, 60 + Math.round(20 * Math.random()));
+      chart.draw(data, options);
+    }, 26000);
+  };
+
+  google.charts.setOnLoadCallback(drawMarkersMap);
+
+  function drawMarkersMap() {
+    var data = google.visualization.arrayToDataTable([
+      ['City', 'Population', 'Area'],
+      ['Berlin', 3502000, 891.8],
+      ['Munich', 1388000, 310.4],
+      ['Hamburg', 1734000, 755.2],
+      ['Cologne', 1024000, 405.2],
+      ['Bonn', 309869, 141.1],
+      ['Frankfurt', 687775, 248.3],
+      ['Stuttgart', 597939, 207.4]
+    ]);
+
+    var options = {
+      region: 'DE',
+      displayMode: 'markers',
+      colorAxis: {
+        colors: ['green', 'blue']
+      }
+    };
+
+    var mapChart = new google.visualization.GeoChart(document.getElementById('map_chart_div'));
+    mapChart.draw(data, options);
+  };
+  </script>
+</head>
+
+<body>
+  <!--Div that will hold the pie chart-->
+  <div id="pie_chart_div"></div>
+  <div id="gauge_chart_div"></div>
+  <div id="map_chart_div"></div>
+</body>
+
+</html>
