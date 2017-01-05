@@ -23,7 +23,7 @@ UI.submitClick = function(){
 UI.clearDiv = function(divClass){
   document.getElementsByClassName(divClass)[0].innerHTML="";
   if (divClass === "js-search-results") {
-    document.getElementsByClassName(divClass)[0].style.backgroundImage = "url(http://lorempixel.com/200/200/abstract/)";
+    document.getElementsByClassName(divClass)[0].style.backgroundImage = "url(http://lorempixel.com/500/500/abstract/)";
   }
 }
 
@@ -33,7 +33,7 @@ UI.clearStorage = function(){
     localStorage.clear();
   });
 }
-// skin it differently 
+
 
 
 
@@ -136,6 +136,8 @@ SoundCloudAPI.getEmbed = function(trackUrl) {
 
 // Initialize API with key
 SoundCloudAPI.init();
+// Load Skin
+UI.clearDiv("js-search-results");
 // Register Listeners
 UI.enterPress();
 UI.submitClick();
