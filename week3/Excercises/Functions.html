@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Functions</title>
+  <script type="text/javascript">
+  /* Self-executing anonymous function
+     First the anonymous function
+     Then we add a pair of parentheses at the end
+     These two parentheses cause everything contained in the preceding parentheses
+     to be executed immediately.
+    */
+  (function() {
+    console.log("Anonymous functions FTW!");
+  })();
+
+  function catSound() {
+    console.log("nya nya");
+  }
+
+  catSound();
+
+  // Anonymous Function
+  var dogSound = function(){
+    console.log("Wan, Wan!!");
+  };
+
+  dogSound();
+
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>
