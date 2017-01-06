@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Tabletop.js</title>
+  <style type="text/css">
+  body {
+    background: pink;
+  }
+  </style>
+</head>
+
+<body>
+  <div class="js-search-results"></div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
+  <script type='text/javascript'>
+  var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1wyg34DtndqrWYlbSD-3S9Tw5YxgOWQtcv2p2JdS6L2Q/pubhtml';
+
+  function init() {
+    Tabletop.init({
+      key: publicSpreadsheetUrl,
+      callback: showInfo,
+      simpleSheet: true
+    })
+  }
+
+  function showInfo(data, tabletop) {
+    // alert('Successfully processed!')
+    // console.log(data);
+    data.forEach(function(data){
+      console.log(data.Category);
+    });
+    render(data);
+  }
+
+  function render(data) {
+    data.forEach(function(data){
+      var section = document.createElement('div');
+      section.classList.add('section');
+      section.innerHTML = '<h1>' + data.Category + '</h1>';
+      var searchResults = document.querySelector('.js-search-results');
+      searchResults.appendChild(section);
+    });
+
+    // for (i = 0; i < data.length; i++) {
+    //   var section = document.createElement('div');
+    //   section.classList.add('section');
+    //   section.innerHTML = '<h1>' + data[i].Category + '</h1>';
+    //   var searchResults = document.querySelector('.js-search-results');
+    //   searchResults.appendChild(section);
+    // }
+  }
+
+  window.addEventListener('DOMContentLoaded', init)
+  </script>
+</body>
+
+</html>
